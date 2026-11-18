@@ -87,6 +87,9 @@ h2{font-size:28px;line-height:1.1;letter-spacing:-.01em;margin:0 0 6px;font-weig
 .note{color:var(--soft);font-size:14px;margin-top:20px;max-width:80ch}
 .panel{background:var(--panel)}
 .note a{color:inherit;font-weight:600;text-underline-offset:3px}
+.cta{margin-top:22px;padding:18px 20px;border-radius:14px;background:var(--deep);color:#fff;font-size:17px}
+.cta p{margin:0}
+.cta a{color:#fff;font-weight:800;text-underline-offset:3px}
 @media(max-width:760px){.finder,.map{grid-template-columns:minmax(0,1fr)}.qcard{min-height:0;padding:22px 20px 22px 64px}.trunk{left:28px}.stop{left:17px;top:28px}}
 </style>
 </head>
@@ -138,6 +141,7 @@ h2{font-size:28px;line-height:1.1;letter-spacing:-.01em;margin:0 0 6px;font-weig
    <h2>All programs and teams</h2>
    <p class="lede">What each one offers and who it is for.</p>
    <div class="grid" id="grid"></div>
+   <div class="cta"><p><b>Interested in reaching out or joining an EC program?</b> Visit <a href="https://www.kaust.edu.sa/en/innovate/kaust-entrepreneurship-programs">KAUST Entrepreneurship Programs</a>.</p></div>
    <p class="note">New to entrepreneurship? Try KAUST's free Arabic course <a href="https://www.edx.org/school/kaust">Entrepreneurship Adventures on edX</a>, or learn what the <a href="https://www.kaust.edu.sa/innovate">KAUST National Transformation Institute (NTI)</a> works on.</p>
    <p class="note">Based on each program's public information as of November 2026. Every program confirms eligibility when you apply, and application windows vary. NextEra grants are currently on hold.</p>
   </div>
@@ -184,7 +188,7 @@ function render(){
   $("step").textContent="All done";
   $("q").textContent=got.length?`You match ${got.length} program${got.length>1?"s":""}.`:"No direct match yet.";
   $("help").textContent=got.length?"Start with the first match, then explore the others. Each program confirms eligibility when you apply.":"A great first step is to learn the basics of entrepreneurship and get to know what KAUST's National Transformation Institute (NTI) does. You can also browse all programs below or start over with different answers.";
-  $("ans").innerHTML=got.length?`<button class="btn yes" type="button" id="see">See all programs</button>`:`<a class="btn yes lnk" href="https://www.edx.org/school/kaust">Entrepreneurship Adventures (free, in Arabic) on edX</a><a class="btn lnk" href="https://www.kaust.edu.sa/innovate">Explore KAUST NTI</a><button class="btn" type="button" id="see">See all programs</button>`;
+  $("ans").innerHTML=got.length?`<a class="btn yes lnk" href="https://www.kaust.edu.sa/en/innovate/kaust-entrepreneurship-programs">Reach out or join an EC program</a><button class="btn" type="button" id="see">See all programs</button>`:`<a class="btn yes lnk" href="https://www.edx.org/school/kaust">Entrepreneurship Adventures (free, in Arabic) on edX</a><a class="btn lnk" href="https://www.kaust.edu.sa/innovate">Explore KAUST NTI</a><button class="btn" type="button" id="see">See all programs</button>`;
   $("see").onclick=()=>$("programs").scrollIntoView({behavior:"smooth"});
  }else{
   const x=Q[cur];
